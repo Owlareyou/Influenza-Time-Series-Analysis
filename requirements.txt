@@ -4,4 +4,3 @@ numpy
 requests
 bs4
 matplotlib
-time
