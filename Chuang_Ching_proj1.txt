@@ -1,0 +1,44 @@
+Q1: DATA SOURCE 1:
+https://www.cdc.gov/flu/weekly/pastreports.htm
+
+Brief description of data/API (what it contains, what it represents, etc.):
+This is the Centers For Disease Control and Prevention webpage that contains weekly Influenza reports from the past decades.
+Through this url, I can go go through the weeks one by one and obtain informations regarding number of specimens tested, what percentage are positive, and number of positive specimens by type.  
+
+
+Q2: DATA SOURCE 2:
+URL for website or API: https://openweathermap.org/
+(If API, link to API docs): https://openweathermap.org/history
+
+Brief description of data/API (what it contains, what it represents, etc.):
+This is an website that provides hourly historical weather data based on longitude and latitude. This helps me pinpoint weather data of Los Angeles County for future analysis.
+With a student's account, we can make History API calls for free.
+This will provide me information regarding the temperature, feels_like temp, humidity, temp_min, temp_max from the past year.
+Other informations such as clouds, wind, rain are also possible indicators that we can use.
+Minneapolis, Minnesota
+Miami, Florida
+Los Angeles, California
+
+
+Q3: DATA SOURCE 3:
+URL for website to scrape or download, or API: https://www.nasdaq.com/market-activity/stocks/azncf/historical
+
+Brief description of data/API (what it contains, what it represents, etc.):
+This is the Nasdaq market activity for the Influenza vaccine manufacturer "AstraZeneca"
+With daily/ weekly market reports, it contains informations about how much was traded, opening value, closing value, highs and low.
+This csv file contains data that goes as far back as 5 years ago.
+
+
+Q4: Briefly (4-6 sentence) describe how you might combine these datasets (i.e. how do they relate to each other?  What are the commonalities between them?  How might you connect them?  How do they enrich each other?). For example, if you scraped census data that contains a person’s “home town”, google maps API data, and data with median income per zip code, you might discuss how you would use the google maps API to translate the hometown to a particular zip code, and then combine that with the income data.  
+
+All three of my datasets are time series datas. This is crucial since I would like to combine and compare them in a weekly manner.
+A possible method of connecting them all together is having 51 rows representing 51 weeks in the year, and the column files will be datas from all three datasets. CDC website will provide us with a baseline of how many cases was reported, and other columns will be datas from weather API and AstraZeneca stock market values. 
+
+
+
+
+
+G5: Briefly (4-6 sentence) describe what you might hope to find in the data overall.  Basically, what are you trying to accomplish in this research project?  What relationship are you trying to explore, or what pattern are you trying to discover, etc.
+
+The main focus point of my project would be the CDC influenza reports. There seems to be a pattern when it comes to the flu season. We can match the weekly reports from the CDC to the temperature/ weather data to see if there are correlations between the two.
+As for the stock exchange data, I would like to compare the wether or not a high demand of influenza vaccines during the flu season has any impact on the market value of the largest flu vaccine manufacturers in the US. Perhaps the stock market value also fluctuates the same as the influenza case reports.
