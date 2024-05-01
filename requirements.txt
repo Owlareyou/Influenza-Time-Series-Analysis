@@ -3,6 +3,5 @@ pandas
 numpy
 requests
 bs4
-os
 matplotlib
 time
