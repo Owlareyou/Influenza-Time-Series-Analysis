@@ -232,21 +232,22 @@ def concat_year_df(urls):
 # public_df = get_weekly_public_data(temp_url) 
 
 # week_df = concat_week_df(clinical_df, public_df, temp_url)
-url = "https://www.cdc.gov/flu/weekly/pastreports.htm"
-r = requests.get(url)
-soup = BeautifulSoup(r.content, 'lxml')#lxml is the underlying parser
-all_years_link = soup.find_all('ul', class_="mb-0 cc-md-2 lsp-out block-list") 
-#print(all_years_link)
-
-#line 1 is current weekly report
-#in my scraping, a single_year stars with "weekly"
-#then starts with week 39 of the year, counting down and then to week 52 of the prev year, 
-#until week 40 of prev year
-num = 1
-skip_2024 = True #only get one year data atm
 RESCRAPE_DATA = False
 
 if RESCRAPE_DATA:
+    url = "https://www.cdc.gov/flu/weekly/pastreports.htm"
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, 'lxml')#lxml is the underlying parser
+    all_years_link = soup.find_all('ul', class_="mb-0 cc-md-2 lsp-out block-list") 
+    #print(all_years_link)
+    
+    #line 1 is current weekly report
+    #in my scraping, a single_year stars with "weekly"
+    #then starts with week 39 of the year, counting down and then to week 52 of the prev year, 
+    #until week 40 of prev year
+    num = 1
+    skip_2024 = True #only get one year data atm
+
         
     for single_year in all_years_link:
         if skip_2024:
